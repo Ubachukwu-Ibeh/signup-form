@@ -2,10 +2,6 @@ import { IFormStore } from "../interfaces/interfaces";
 
 const specialCharacters = ["@", "-", "%", "!", "#", "$", "^"];
 
-const checkType = (value: any, expectedType: string) => {
-  return typeof value !== expectedType ? false : true;
-};
-
 const contains = (
   val: string,
   expect: string | Array<string>
@@ -31,8 +27,6 @@ const handleError = (state: IFormStore) => {
       case "username":
         if (info.length === 0) {
           state.error.username = "Username field cannot be empty";
-        } else if (!checkType(info, "string")) {
-          state.error.username = "Username has to be in text";
         } else if (
           Object.values(contains(info, specialCharacters)).includes(true)
         ) {
