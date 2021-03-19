@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle1,
+.circle2 {
+  background-color: rgb(245, 237, 255);
+  position: absolute;
+  z-index: -1;
+}
+
+.circle1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  top: 10%;
+  left: 20%;
+
+  @media screen and (max-width: 500px) {
+    top: 10%;
+    left: -5%;
+  }
+}
+
+.circle2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  top: 70%;
+  left: 70%;
+}
