@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./style/Input.module.scss";
-import {
-  IFormInfoObject,
-  IFormInputProps
-} from "../../../../interfaces/interfaces";
+import { IFormInfoObject } from "../../../../interfaces/interfaces";
 import { FormContext } from "../Form/Form";
 import formStore from "../../../../stores/FormStore";
 
@@ -11,7 +8,7 @@ const formInfoObject: IFormInfoObject = formStore.information;
 
 export const getFormInfoObject = () => formInfoObject;
 
-const Input = ({ inputName }: IFormInputProps) => {
+const Input = ({ inputName }: { inputName: string }) => {
   const formContext = useContext(FormContext);
 
   const updateInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,10 +17,10 @@ const Input = ({ inputName }: IFormInputProps) => {
 
   return (
     <div className={styles.main}>
-      {inputName in formContext.error && <p>{formContext.error[inputName]}</p>}
       <h3>
         {inputName} <span> *</span>
       </h3>
+      {inputName in formContext.error && <p>{formContext.error[inputName]}</p>}
       <input
         type={inputName}
         onChange={e => updateInfo(e)}

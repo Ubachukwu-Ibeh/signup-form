@@ -4,11 +4,7 @@ export interface IFormInfoObject {
 
 export interface IFormAction {
   type: string;
-  payload: IFormInfoObject;
-}
-
-export interface IFormInputProps {
-  inputName: string;
+  payload: any;
 }
 
 export interface IFormStore {

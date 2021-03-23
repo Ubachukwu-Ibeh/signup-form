@@ -15,8 +15,8 @@ const Form = () => {
     <FormContext.Provider value={{ ...state, dispatch }}>
       {!state.hasAttempted || Object.keys(state.error).length !== 0 ? (
         <div className={styles.main}>
-          {["username", "email", "password"].map(item => {
-            return <Input key={item} inputName={item} />;
+          {["username", "email", "password"].map((item, index) => {
+            return <Input key={index} inputName={item} />;
           })}
           <button
             type="submit"

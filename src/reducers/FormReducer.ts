@@ -15,4 +15,5 @@ const formReducer = (state = formStore, action: IFormAction) => {
       return state;
   }
 };
+
 export default formReducer;
